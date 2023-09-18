@@ -1,56 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <title>Listado de Tareas</title>
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="CSS/cabecera.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <title>LOGIN</title>
 </head>
 
 <body>
-    <header>
-        <center>
-            <h2>Login de usuarios</h2>
-        </center>
-    </header>
-    
-    <section>
-        <center>
-            <img src="IMAGES/User.jpg" alt="Usuario" width="150">
+    <center>
+        <form action="Validar.php" method="post">
+
+            <h2 class="animate__animated animate__backInLeft">LOGIN USUARIO</h2>
+            <hr>
+            <p>Usuario <input type="text" placeholder="Nombre de usuario" name="user"></p>
+            <p>Password <input type="text" placeholder="Ingrese su contraseña" name="password"></p>
+            <input type="submit" value="Ingresar">
             
-            <table width="200" class="table table-hover">
-                <tr>
-                    <td>
-                        USUARIO:
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Usuario" required name="txtUsuario">
-                    </td>
-
-                </tr>
-                <tr>
-                    <td>
-                        PASSWORD:
-                    </td>
-                    <td>
-                        <input type="text" placeholder="Password" required name="txtPassword">
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Ingresar" name="btnIngresar">
-                    </td>
-                </tr>
-
-            </table>
-        </center>
-    </section>
-    <footer>
-
-    </footer>
+            <input type="submit" value="Registrate">
+            
+        </form>
+        
+        <footer>
+            <h5>DERECHOS RESERVADOS - @2023 - LIMBERTHSTYLE</h5>
+        </footer>
+    </center>
 </body>
 
 </html>
