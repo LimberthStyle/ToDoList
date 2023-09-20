@@ -1,28 +1,22 @@
 <?php
-
-$usuario = $_POST["user"];
-$contraseña = $_POST["password"];
-
-session_start();
-$_SESSION["user"] = $usuario;
-
+ 
 include("BD.php");
 
-$consulta = "SELECT*FROM TALUMNO where CODALUMNO='$usuario' and NOMALUMNO='$contraseña'";
-$resultado = mysqli_query($cn, $consulta);
+$usuario = $_POST['user'];
+$password = $_POST['password'];
 
-$filas = mysqli_num_rows($resultado);
+$consulta = "SELECT * FROM USUARIO WHERE USERNAME = '$usuario' AND CONTRASEÑA = '$password' ";
+$rs = mysqli_query($cn , $consulta);
+
+$filas = mysqli_num_rows($rs);
 
 if ($filas) {
-
     header("location:ToDoList.php");
-} else {
-?>
-    <?php
+}else{
     include("Index.php");
     ?>
-    <h1 class="bad">ERROR DE AUTENTIFICACION</h1>
-<?php
+    <h1>ERORR DE AUNTENTIFICACION</h1>
+    <?php
 }
-mysqli_free_result($resultado);
+mysqli_free_result($rs);
 mysqli_close($cn);
