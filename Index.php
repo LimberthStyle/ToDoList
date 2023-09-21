@@ -26,8 +26,6 @@
                 <span>Registrate</span>
             </a>
 
-
-
         </form>
 
         <footer>

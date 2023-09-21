@@ -15,7 +15,7 @@
             <h1>PASOS PARA TU REGISTRO</h1>
         </header>
         <section>
-            <table>
+            <table widht="200">
                 <tr>
                     <td>USERNAME</td>
                     <td>
