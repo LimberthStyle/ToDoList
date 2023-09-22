@@ -37,7 +37,7 @@
                     $rs = mysqli_query($cn, "CALL sp_ListaTareas");
                     foreach ($rs as $r) { ?>
                         <tr>
-                            <td><?php echo $r['ID'] ?></td>
+                            <td class="txtID"><?php echo $r['ID'] ?></td>
                             <td><?php echo $r['TA'] ?></td>
                             <td><?php echo $r['ES'] ?></td>
                             <td>

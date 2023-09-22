@@ -1,9 +1,12 @@
 <?php
- 
+ session_start();
+
 include("BD.php");
 
 $usuario = $_POST['user'];
 $password = $_POST['password'];
+$_SESSION["user"] = $usuario;
+$_SESSION["password"] = $usuario;
 
 $consulta = "SELECT * FROM USUARIO WHERE USERNAME = '$usuario' AND CONTRASEÑA = '$password' ";
 $rs = mysqli_query($cn , $consulta);

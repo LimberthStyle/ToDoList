@@ -18,7 +18,7 @@
             <h2 class="animate__animated animate__backInLeft"><b>LOGIN USUARIO</b></h2>
             <hr>
             <p><b>Usuario</b> <input type="text" placeholder="Nombre de usuario" name="user"></p>
-            <p><b>Password</b> <input type="text" placeholder="Ingrese su contraseña" name="password"></p>
+            <p><b>Password</b> <input type="password" placeholder="Ingrese su contraseña" name="password"></p>
 
             <input type="submit" value="Ingresar" name="btnIngreso">
             <hr>
