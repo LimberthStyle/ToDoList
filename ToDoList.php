@@ -20,7 +20,7 @@
             <section>
                 <table class="table table-hover">
                     <tr>
-                        <td><b>USUARIO</b> </td>
+                        <td width="50"><b>USUARIO</b> </td>
                         <td>
                             <input type="text" name="usu" size="50">
                         </td>
@@ -37,7 +37,7 @@
                     $rs = mysqli_query($cn, "CALL sp_ListaTareas");
                     foreach ($rs as $r) { ?>
                         <tr>
-                            <td class="txtID"><?php echo $r['ID'] ?></td>
+                            <td id="#USER"><?php echo $r['ID'] ?></td>
                             <td><?php echo $r['TA'] ?></td>
                             <td><?php echo $r['ES'] ?></td>
                             <td>
