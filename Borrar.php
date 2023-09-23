@@ -14,20 +14,24 @@
     include("BD.php");
     ?>
     <header>
+        <center>
         <h1>Eliminar Tarea</h1>
+        </center>
     </header>
     <section>
         <form action="" method="post">
-            <table>
+            <table class="table table-hover">
                 <tr>
-                    <td>Codigo de tarea a eliminar </td>
+                    <td width="550"></td>
+                    <td width="50">CODIGO</td>
                     <td>
                         <input type="text" name="txtID">
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <input type="submit" value="Eliminar" name="btnBorrar">
+                    <td width="550"></td>
+                    <td colspan="2">
+                        <input type="submit" value="Borrar" name="btnBorrar" class="btn btn-danger">
                     </td>
                 </tr>
                 <?php
