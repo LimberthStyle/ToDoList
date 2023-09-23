@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    error_reporting(0);
+    //error_reporting(0);
     include('BD.php');
     $codigo = '';
     $mensaje = '';
@@ -20,24 +20,24 @@
         $codigo = $_POST['txtCodigo'];
 
         if ($boton == "Buscar") {
-            $rs = mysqli_query($cn, "CALL SP_BUSCARTAREA('$codigo')");
+            $rs = mysqli_query($cn, "CALL SP_BUSCARTAREA($codigo)");
 
             $n = mysqli_num_rows($rs);
 
             if ($n == 0)
                 echo "<script>alert('NO EXISTE LA TAREA')</script>";
 
-            $miTarea = mysqli_fetch_array($rs);
+            $TA = mysqli_fetch_array($rs);
         }
 
-        if ($boton == "ACTUALIZAR") {
+        if ($boton == "Actualizar") {
             $cod = $codigo;
             $user = $_POST['txtUsuario'];
             $tarea = $_POST['txtTarea'];
             $estado = $_POST['txtEstado'];
 
             $rs = mysqli_query($cn, "UPDATE TAREAS
-                SET ID_USER= '$user' ,TAREA = '$tarea', Estado= $estado
+                SET ID_USER= $user ,TAREA = '$tarea', Estado= '$estado'
                 WHERE ID_TAREA= $cod");
 
             if ($rs) {
@@ -65,7 +65,7 @@
                         CODIGO DE TAREA
                     </td>
                     <td width="100">
-                        <input type="text" name="txtCodigo" value="<?php echo $miTarea['ID_TAREA']; ?>">
+                        <input type="text" name="txtCodigo" value="<?php echo $TA['id_tarea']; ?>">
                     </td>
                     <td>
                         <input type="submit" value="Buscar" name="btnBuscar" class="btn btn-primary">
@@ -76,19 +76,19 @@
                     <tr>
                         <td width="450"></td>
                         <td width="130">USUARIO</td>
-                        <td><input type="text" name="txtUsuario" size="40" value="<?php echo $miTarea['ID_USER']; ?>">
+                        <td><input type="text" name="txtUsuario" size="40" value="<?php echo $TA['id_user']; ?>">
 
                     </tr>
                     <tr>
                         <td width="450"></td>
                         <td width="130">TAREA</td>
-                        <td><input type="text" name="txtTarea" size="40" value="<?php echo $miTarea['TAREA']; ?>">
+                        <td><input type="text" name="txtTarea" size="40" value="<?php echo $TA['tarea']; ?>">
 
                     </tr>
                     <tr>
                         <td width="450"></td>
                         <td>ESTADO</td>
-                        <td><input type="text" name="txtEstado" size="40" value="<?php echo $miTarea['ESTADO']; ?>">
+                        <td><input type="text" name="txtEstado" size="40" value="<?php echo $TA['Estado']; ?>">
 
                     </tr>
                     <tr>
